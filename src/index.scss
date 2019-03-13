@@ -1,0 +1,75 @@
+@import "~tailwindcss/dist/tailwind.css";
+
+._brand {
+	font-family: "Woodwarrior";
+}
+
+
+.hammer-loader {
+	animation-duration: .8s;
+	animation-name: zoomInOutRotate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+
+@keyframes zoomInOutRotate {
+	
+	0% {
+		transform: rotate(0) scale(1);
+	}
+	
+	50% {
+		transform: rotate(180deg) scale(2);
+	}
+	
+	100% {
+		transform: rotate(360deg) scale(1);
+	}
+}
+
+@keyframes zommInOut {
+	from {
+		transform: scale(1);
+	}
+	
+	to {
+		transform: scale(1.2);
+	}
+}
+
+
+@font-face {
+	font-family: 'Woodwarrior';
+	src: url('./woodwarrior/Woodwarrior-Bold.eot');
+	src: local('Woodwarrior Bold'), local('Woodwarrior-Bold'),
+	url('./woodwarrior/Woodwarrior-Bold.eot?#iefix') format('embedded-opentype'),
+	url('./woodwarrior/Woodwarrior-Bold.woff') format('woff'),
+	url('./woodwarrior/Woodwarrior-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*
+@font-face {
+	font-family: 'Woodwarrior';
+	src: url('./woodwarrior/Woodwarrior-Light.eot');
+	src: local('Woodwarrior Light'), local('Woodwarrior-Light'),
+	url('./woodwarrior/Woodwarrior-Light.eot?#iefix') format('embedded-opentype'),
+	url('./woodwarrior/Woodwarrior-Light.woff') format('woff'),
+	url('./woodwarrior/Woodwarrior-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Woodwarrior';
+	src: url('./woodwarrior/Woodwarrior-Regular.eot');
+	src: local('Woodwarrior Regular'), local('Woodwarrior-Regular'),
+	url('./woodwarrior/Woodwarrior-Regular.eot?#iefix') format('embedded-opentype'),
+	url('./woodwarrior/Woodwarrior-Regular.woff') format('woff'),
+	url('./woodwarrior/Woodwarrior-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
