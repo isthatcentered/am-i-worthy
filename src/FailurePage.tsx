@@ -22,6 +22,7 @@ export function FailurePage( { navigate, location, style = {}, className = "", c
 			className={`${className} FailurePage text-center`}
 		>
 			<img
+				className="rounded"
 				src={unhappyThorImage}
 				alt="Thor is not happy with your results"
 			/>
