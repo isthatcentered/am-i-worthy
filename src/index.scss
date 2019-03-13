@@ -12,6 +12,22 @@
 	animation-iteration-count: infinite;
 }
 
+.strikeout {
+	
+	&:after {
+		content: '';
+		color: inherit;
+		border-bottom: 4px solid currentColor;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		transform: rotate(-5deg);
+	}
+	
+	position: relative;
+}
+
 
 @keyframes zoomInOutRotate {
 	

@@ -1,93 +1,37 @@
-import React, { FormEvent, useState } from "react";
+import React from "react";
 // import logo from './logo.svg';
-import thorArm from "./thor.jpg"
-import hammer from "./hammer.jpg"
+import { Link, Router } from "@reach/router"
+import { HomePage } from "./HomePage"
+import { SuccessPage } from "./SuccessPage"
+import { FailurePage } from "./FailurePage"
+import thorFaceImg from "./thor-face.jpg"
 
 
 
 
 function App()
 {
-	const [ repoName, setRepoName ] = useState( "" ),
-	      [ loading, setLoading ]   = useState( false )
-	
-	
-	function handleSubmit( e: FormEvent<HTMLFormElement> )
-	{
-		e.preventDefault()
-		setLoading( true )
-		setTimeout( _ => setLoading( false ), 3000 )
-		
-	}
-	
 	
 	return (
-		<div className="App min-h-screen flex justify-center items-center">
-			
-			{
-				loading ?
-				<>
+		<>
+			<nav className="p-4 absolute pin-l pin-t w-full">
+				<Link to="/">
 					<img
-						width={100}
-						className="hammer-loader"
-						src={hammer}
-						alt="Thor's Hammer"
+						className="opacity-25"
+						width={50}
+						src={thorFaceImg}
+						alt="Thor's face untastily used as a logo"
 					/>
-				</> :
-				<main
-					className="w-full text-center px-4 "
-					style={{ paddingBottom: "25vh" }}
-				>
-					<img
-						className="pb-2"
-						src={thorArm}
-						alt="THor's hammer"
-					/>
-					<h1 className="_brand uppercase text-5xl">Are you worthy</h1>
-					<div className="pt-6"/>
-					<form
-						onSubmit={handleSubmit}
-						className="max-w-lg mx-auto"
-					>
-						<label className="block relative">
-							<style>
-								{`
-								.lkjhg:focus {
-									border-color: purple;
-								}
-								
-								.lkjhg:focus + i {
-									color: purple !important;
-								}
-								`}
-							</style>
-							<input
-								className="lkjhg shadow-md rounded-lg w-full px-4 border-4 border-grey text-3xl focus:shadow-purple-outline outline-none "
-								style={{ height: "80px" }}
-								type="text"
-								placeholder="my-git-repo-name"
-								onChange={e => setRepoName( e.target.value )}
-							/>
-							<i
-								className="fab fa-github absolute pin-r pin-t block text-5xl text-grey-light h-full flex items-center px-4"
-								title="Github icon"
-							/>
-						</label>
-						<div className="pt-10"/>
-						<button
-							className={`_brand py-5 px-6  rounded-lg text-lg text-white uppercase`}
-							disabled={!repoName}
-							style={{
-								background: repoName ?
-								            "purple" :
-								            "#b8c2cc",
-							}}
-						>
-							Take the test
-						</button>
-					</form>
-				</main>}
-		</div>
+				</Link>
+			</nav>
+			<main className="p-4 min-h-screen flex justify-center items-center">
+				<Router>
+					<HomePage path="/"/>
+					<SuccessPage path="/success"/>
+					<FailurePage path="/fail"/>
+				</Router>
+			</main>
+		</>
 	);
 }
 
